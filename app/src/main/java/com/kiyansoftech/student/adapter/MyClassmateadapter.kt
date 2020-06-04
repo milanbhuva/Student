@@ -9,6 +9,7 @@ import com.kiyansoftech.student.R
 import com.kiyansoftech.student.model.MyClassmates.Data
 import kotlinx.android.synthetic.main.layout_mytutor.view.*
 import kotlinx.android.synthetic.main.list_myclassmates.view.*
+import kotlinx.android.synthetic.main.list_myclassmates2.view.*
 
 class MyClassmateadapter(private val classmates: ArrayList<Data>) :
     RecyclerView.Adapter<MyClassmateadapter.ClassmateHolder>() {
