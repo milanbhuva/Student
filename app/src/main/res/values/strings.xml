@@ -90,6 +90,8 @@
     <string name="enter_name">Please Enter Name</string>
     <string name="enter_email">Please Enter Email</string>
     <string name="enter_password">Please Enter Password</string>
+    <string name="enter_passwordold">Please Enter Old Password</string>
+    <string name="enter_passwordnew">Please Enter New Password</string>
     <string name="confirm_password">Password does not match.</string>
     <string name="enter_valid_email">Please Enter Valid Email</string>
     <string name="please_wait">Please wait…</string>

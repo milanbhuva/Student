@@ -20,7 +20,6 @@ import com.kiyansoftech.student.ui.fragment.BottomFragments.home.HomeFragment
 import com.kiyansoftech.student.ui.fragment.BottomFragments.library.LibraryFragment
 import com.kiyansoftech.student.ui.fragment.BottomFragments.more.MoreFragment
 import com.kiyansoftech.student.ui.fragment.BottomFragments.notifications.NotificationsFragment
-import com.kiyansoftech.student.ui.fragment.BottomFragments.profile.ProfileFragment
 import com.kiyansoftech.student.ui.fragment.SideFragments.*
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -47,7 +46,7 @@ class Dashboard : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
         imgMenu!!.setOnClickListener(View.OnClickListener {
             if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
                 drawer_layout.closeDrawer(GravityCompat.START)
-            }else{
+            } else {
                 drawer_layout.openDrawer(GravityCompat.START)
             }
         }
@@ -98,7 +97,24 @@ class Dashboard : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
 
         layProfile.setOnClickListener {
             bottomFragment = TutorFragment.newInstance()
+/*
             openFragment(bottomFragment)
+*/
+
+            val bundle = Bundle()
+            val myMessage = "Stackoverflow is cool!"
+            bundle.putString("message", myMessage)
+            val fragInfo = bottomFragment
+            fragInfo?.setArguments(bundle)
+            val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.nav_host_fragment, fragInfo!!)
+            transaction.addToBackStack(null)
+            transaction.commit()
+/*
+to get data in fragmnent
+            val myValue: String = this.getArguments().getString("message")
+*/
+
         }
     }
 
