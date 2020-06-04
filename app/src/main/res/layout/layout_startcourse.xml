@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/rounded_black_border"
+    android:layout_margin="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            android:text="Home > Start a course"
+            android:textColor="@color/black" />
+
+        <SearchView
+            android:visibility="gone"
+            android:id="@+id/searchView"
+            android:layout_width="220dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/textView12"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/roundedborder"
+            android:queryHint="Search all courses"
+            android:iconifiedByDefault="false"
+            />
+
+        <TextView
+            android:id="@+id/lblTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/searchView"
+            android:layout_marginTop="8dp"
+            android:background="@color/dark_black"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/str_startacourse"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblTopCourses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblTitle"
+            android:layout_marginTop="2dp"
+            android:background="@color/gray"
+            android:gravity="left"
+            android:padding="4dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
+            android:text="@string/str_topcourses"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgVideo"
+            android:layout_width="120dp"
+            android:layout_height="90dp"
+            android:layout_below="@id/lblTopCourses"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:padding="10dp"
+            android:background="@drawable/squarecorners"
+            android:src="@drawable/ic_video"/>
+
+        <TextView
+            android:id="@+id/lblSteps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblTopCourses"
+            android:layout_alignTop="@id/imgVideo"
+            android:layout_toEndOf="@+id/imgVideo"
+            android:layout_toRightOf="@+id/imgVideo"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/str_stepToNewCourse"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblGetStarted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblSteps"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_toEndOf="@id/imgVideo"
+            android:layout_toRightOf="@id/imgVideo"
+            android:background="@drawable/roundedborder"
+            android:padding="10dp"
+            android:gravity="center_horizontal"
+            android:text="@string/str_getStarted"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/gray"
+            android:layout_below="@id/imgVideo"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/lblResult"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/view"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="[List of courses here]"
+            android:textColor="@color/gray"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

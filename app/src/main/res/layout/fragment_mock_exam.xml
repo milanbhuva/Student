@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/rounded_black_border"
+    tools:context=".ui.fragment.SideFragments.ClassmatesFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <ImageView
+            android:id="@+id/imgClose"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_close" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Mock Exam"
+            android:textColor="@color/gray"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/rlMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView15"
+            android:layout_marginTop="30dp"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/lblQuestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Q1."
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lblQuestionTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lblQuestion"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Enter question here"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/layMyProfile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/rlMain"
+            android:layout_margin="8dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/rounded_black_border"
+            android:padding="10dp"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/rlFirst"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/squarecorners_fill"
+                    android:padding="5dp">
+
+                    <RadioButton
+                        android:id="@+id/rbtnOption1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:padding="10dp"
+                        android:text="Type option A here"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlSecond"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rlFirst"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/squarecorners_fill"
+                    android:padding="5dp">
+
+                    <RadioButton
+                        android:id="@+id/rbtnOption2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:padding="10dp"
+                        android:text="Type option B here"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlThird"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rlSecond"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/squarecorners_fill"
+                    android:padding="5dp">
+
+                    <RadioButton
+                        android:id="@+id/rbtnOption3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:padding="10dp"
+                        android:text="Type option C here"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlfourth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rlThird"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/squarecorners_fill"
+                    android:padding="5dp">
+
+                    <RadioButton
+                        android:id="@+id/rbtnOption4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:padding="10dp"
+                        android:text="Type option D here"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/rlSubmitAnswer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rlfourth"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/squarecorners_lighgreen"
+                    android:padding="10dp"
+                    android:text="Submit Answer"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/rlSixth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rlfourth"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginRight="40dp"
+                    android:background="@drawable/squarecorners_pink"
+                    android:padding="10dp"
+                    android:text="Skip to Next"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/rlSeven"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rlSubmitAnswer"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/squarecorners_fill"
+                    android:padding="10dp"
+                    android:text="Return to previous"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+        </ScrollView>
+
+
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:background="@drawable/rounded_black_border"
+    tools:context=".ui.fragment.SideFragments.ClassmatesFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgClose"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_close" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgClose"
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Classmates"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/llFirst"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/textView15"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="6.9">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.2" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:layout_weight="3.5"
+                android:background="@drawable/tag_rounded_gray"
+                android:gravity="center"
+                android:text="Enter group chat" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:layout_weight="3"
+                android:background="@drawable/tag_rounded_gray"
+                android:gravity="center"
+                android:text="Course Representative" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.2" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llSecond"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/llFirst"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="9.6">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:layout_weight="3.5"
+                android:background="@drawable/tag_rounded_gray"
+                android:gravity="center"
+                android:text="My Tutor" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="4.1"
+                android:background="@drawable/tag_rounded_gray"
+                android:gravity="center"
+                android:text="Chat Novelle center" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_below="@+id/llSecond"
+            android:layout_marginTop="4dp"
+            android:background="@android:color/darker_gray" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/view"
+            android:layout_margin="8dp"
+            android:background="@drawable/rounded_black_border"
+            android:padding="6dp">
+
+            <LinearLayout
+                android:id="@+id/llFirstRow"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal"
+                android:padding="4dp"
+                android:weightSum="6.4">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/ic_profile" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.5"
+                    android:gravity="center"
+                    android:text="Test user"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_message" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_videocall" />
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_below="@+id/llFirstRow"
+                android:layout_marginTop="3dp"
+                android:background="@color/gray"
+                android:padding="4dp" />
+
+            <LinearLayout
+                android:id="@+id/llSecondRow"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_below="@+id/llFirstRow"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:padding="4dp"
+                android:weightSum="6.4">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/ic_profile" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.5"
+                    android:gravity="center"
+                    android:text="Test user"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_message" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_videocall" />
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_below="@+id/llSecondRow"
+                android:layout_marginTop="3dp"
+                android:background="@color/gray"
+                android:padding="4dp" />
+
+            <LinearLayout
+                android:id="@+id/llThirdRow"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_below="@+id/llSecondRow"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:padding="4dp"
+                android:weightSum="6.4">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/ic_profile" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.5"
+                    android:gravity="center"
+                    android:text="Test user"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_message" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_videocall" />
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_below="@+id/llThirdRow"
+                android:layout_marginTop="3dp"
+                android:background="@color/gray"
+                android:padding="4dp" />
+
+            <LinearLayout
+                android:id="@+id/llFourthRow"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_below="@+id/llThirdRow"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:padding="4dp"
+                android:weightSum="6.4">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/ic_profile" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.5"
+                    android:gravity="center"
+                    android:text="Test user"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_message" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_videocall" />
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_below="@+id/llFourthRow"
+                android:layout_marginTop="3dp"
+                android:background="@color/gray"
+                android:padding="4dp" />
+
+            <LinearLayout
+                android:id="@+id/llFifthRow"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_below="@+id/llFourthRow"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:padding="4dp"
+                android:weightSum="6.4">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/ic_profile" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.5"
+                    android:gravity="center"
+                    android:text="Test user"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_message" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_videocall" />
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view5"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_below="@+id/llFifthRow"
+                android:layout_marginTop="3dp"
+                android:background="@color/gray"
+                android:padding="4dp" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "367279693117",
+    "firebase_url": "https://novelle-e093a.firebaseio.com",
+    "project_id": "novelle-e093a",
+    "storage_bucket": "novelle-e093a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:367279693117:android:adf5f12fe80a8e906cf954",
+        "android_client_info": {
+          "package_name": "com.kiyansoftech.student"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "367279693117-fluldmhncicuf9i92mlhr6rgo7kfh4lp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAK_ih0vHQmuI_S2kpzhTaYzyh6ToxzzRc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "367279693117-fluldmhncicuf9i92mlhr6rgo7kfh4lp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".ui.fragment.BottomFragments.profile.ProfileFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            android:text="Home > My Payments"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:id="@+id/rlTop"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/mulledwine">
+
+            <TextView
+                android:id="@+id/lblTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:text="My Payments"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@id/lblTitle"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/user_placeholder" />
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/rlTop"
+            android:background="@color/mulledwine" />
+
+        <RelativeLayout
+            android:id="@+id/rlBox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/rlTop"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/white">
+
+            <ScrollView
+                android:id="@+id/layMyProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/rounded_black_border"
+                android:scrollbars="none">
+
+                <RelativeLayout
+                    android:paddingBottom="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/llFirst"
+                        android:layout_width="match_parent"
+                        android:layout_height="95dp"
+                        android:layout_marginTop="50dp"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2" />
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.3"
+                            android:background="@drawable/squarecorners"
+                            android:padding="4dp">
+
+                            <TextView
+                                android:id="@+id/lblCharged"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:text="Charged"
+                                android:textColor="@color/dark_black"
+                                android:textStyle="bold" />
+
+                            <View
+                                android:id="@+id/view"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.8dp"
+                                android:layout_below="@id/lblCharged"
+                                android:background="@color/gray" />
+
+                            <TextView
+                                android:id="@+id/lblPrice1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_below="@id/view"
+                                android:gravity="center"
+                                android:text="NGN 8000"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2" />
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.3"
+                            android:background="@drawable/squarecorners"
+                            android:padding="4dp">
+
+                            <TextView
+                                android:id="@+id/lblPaid"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:text="Paid"
+
+                                android:textColor="@color/dark_black"
+                                android:textStyle="bold" />
+
+                            <View
+                                android:id="@+id/view1"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.8dp"
+                                android:layout_below="@id/lblPaid"
+                                android:background="@color/gray" />
+
+                            <TextView
+                                android:id="@+id/lblPrice2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_below="@id/view1"
+                                android:gravity="center"
+                                android:text="NGN 8000"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2" />
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.3"
+                            android:background="@drawable/squarecorners"
+                            android:padding="4dp">
+
+                            <TextView
+                                android:id="@+id/lblBalance"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:text="Balance"
+                                android:textColor="@color/dark_black"
+                                android:textStyle="bold" />
+
+                            <View
+                                android:id="@+id/view2"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.8dp"
+                                android:layout_below="@id/lblBalance"
+                                android:background="@color/gray" />
+
+                            <TextView
+                                android:id="@+id/lblPrice3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_below="@id/view2"
+                                android:gravity="center"
+                                android:text="NGN 0.00"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5" />
+
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnMakePayment"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/llFirst"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/squarecorners_payment"
+                        android:padding="10dp"
+                        android:text="@string/str_makePayment"
+                        android:textAllCaps="false"
+                        android:textSize="15sp"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/txtPaymentHistory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/btnMakePayment"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/str_paymentHistory"
+                        android:textColor="@color/gray"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/txtInvoice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtPaymentHistory"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/str_invoice"
+                        android:textColor="@color/gray"
+                        android:textSize="15sp" />
+
+                </RelativeLayout>
+
+            </ScrollView>
+
+
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

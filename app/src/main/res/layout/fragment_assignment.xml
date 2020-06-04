@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="2dp"
+        android:background="@drawable/rounded_black_border">
+
+        <ImageView
+            android:id="@+id/imgClose"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_close" />
+
+        <LinearLayout
+            android:id="@+id/llFirst"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_below="@+id/imgClose"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="5.6">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:padding="6dp"
+                android:src="@drawable/ic_pdf" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:padding="6dp"
+                android:src="@drawable/ic_pdf" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:padding="6dp"
+                android:src="@drawable/ic_pdf" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:padding="6dp"
+                android:src="@drawable/ic_pdf" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llSecond"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/llFirst"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:weightSum="5.7">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:gravity="center"
+                android:src="@drawable/ic_pdf"
+                android:text="Lesson 1\n Assignment "
+                android:textSize="13sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:gravity="center"
+                android:src="@drawable/ic_pdf"
+                android:text="Lesson 2\n Assignment"
+                android:textSize="13sp" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:gravity="center"
+                android:src="@drawable/ic_pdf"
+                android:text="Lesson 3\n Assignment"
+                android:textSize="13sp" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:gravity="center"
+                android:src="@drawable/ic_pdf"
+                android:text="Lesson 4\n Assignment"
+                android:textSize="13sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_above="@+id/rlBottom"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/darker_gray" />
+
+        <RelativeLayout
+            android:id="@+id/rlBottom"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:id="@+id/lblTitleAssign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:background="@color/gray"
+                android:gravity="left"
+                android:padding="3dp"
+                android:text="Submit Assignment"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lblFileChoose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblTitleAssign"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_black_border"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Choose Files"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lblTitleAssign"
+                android:layout_alignTop="@id/lblFileChoose"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toEndOf="@+id/lblFileChoose"
+                android:layout_toRightOf="@+id/lblFileChoose"
+                android:gravity="left"
+                android:padding="3dp"
+                android:text="No files Chosen"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/lblCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblTitleAssign"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rounded_black_border"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Close"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/lblUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblTitleAssign"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="8dp"
+                android:layout_toStartOf="@id/lblCancel"
+                android:layout_toLeftOf="@id/lblCancel"
+                android:background="@drawable/rounded_black_border"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Upload"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/lblAddAttch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblFileChoose"
+                android:layout_alignStart="@id/lblFileChoose"
+                android:layout_alignLeft="@id/lblFileChoose"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/squarecorners"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Add another Attachment"
+                android:textColor="@color/gray"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lblCurrentAttach"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblAddAttch"
+                android:layout_alignStart="@id/lblFileChoose"
+                android:layout_alignLeft="@id/lblFileChoose"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Current File Attachments :"
+                android:textColor="@color/gray"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lblCurrentFirst"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_below="@+id/lblCurrentAttach"
+                android:layout_alignStart="@id/lblCurrentAttach"
+                android:layout_alignLeft="@id/lblCurrentAttach"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/squarecorners"
+                android:gravity="left"
+                android:padding="5dp"
+                android:textColor="@color/gray"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lblCurrentSecond"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_below="@+id/lblCurrentFirst"
+                android:layout_alignStart="@id/lblCurrentFirst"
+                android:layout_alignLeft="@id/lblCurrentFirst"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/squarecorners"
+                android:gravity="left"
+                android:padding="5dp"
+                android:textColor="@color/gray"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lblRemove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lblCurrentSecond"
+                android:layout_alignStart="@id/lblUpload"
+                android:layout_alignLeft="@id/lblUpload"
+                android:background="@drawable/rounded_black_border"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Remove"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
