@@ -40,6 +40,7 @@ class Global(context: Context) {
         const val VENDER_CATEGORY = "category"
         const val FCM_TOKEN = "fcm_token"
         const val LANGUAGE = "language"
+        const val PREF_NAME = "student"
 
         fun isConnected(context: Context): Boolean {
             val connectivityManager =

@@ -43,6 +43,8 @@ class Dashboard : BaseActivity(), NavigationView.OnNavigationItemSelectedListene
     private var bottomFragment: Fragment? = null
     private var sideFragment: Fragment? = null
     private var toolbar: Toolbar? = null
+    var userid: String  = ""
+
 
     // flag to load home fragment when user presses back key
     private val shouldLoadHomeFragOnBackPress = true
@@ -58,6 +60,7 @@ class Dashboard : BaseActivity(), NavigationView.OnNavigationItemSelectedListene
         )
         setContentView(R.layout.activity_main)
 
+        userid=intent.getStringExtra("userid")
         imgMenu = findViewById<View>(R.id.imgViewMenu) as ImageView
         imgMenu!!.setOnClickListener(View.OnClickListener {
             if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
@@ -182,32 +185,6 @@ to get data in fragmnent
 
     }
 
-    private fun getmytutor() {
-
-        Networking.with().getServices().getMyTutors(session.user?.userId.toString())
-            .enqueue(object : Callback<GetMyTutor> {
-                override fun onFailure(call: Call<GetMyTutor>, t: Throwable) {
-                    Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
-                }
-
-                override fun onResponse(
-                    call: Call<GetMyTutor>,
-                    response: Response<GetMyTutor>
-                ) {
-                    if (response.body()?.status ==0){
-
-                        Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
-                    }else{
-                        val name = response.body()?.data?.get(0)?.name
-                        Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
-/*
-                        goToActivityAndClearTask<Dashboard>()
-*/
-                    }
-                }
-            })
-
-    }
 
     override fun onBackPressed() {
         val drawer =
@@ -221,6 +198,9 @@ to get data in fragmnent
 
 
     fun openFragment(fragment: Fragment?) {
+        val bundle = Bundle()
+        bundle.putString("userid", userid)
+        fragment?.setArguments(bundle)
         val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.nav_host_fragment, fragment!!)
         transaction.addToBackStack(null)

@@ -2,7 +2,9 @@ package com.kiyansoftech.student.utils
 
 import android.app.NotificationManager
 import android.content.Context
+import android.content.SharedPreferences
 import com.google.gson.Gson
+import com.kiyansoftech.student.Global.Global
 import com.kiyansoftech.student.R
 import com.kiyansoftech.student.model.Login.LoginData
 
@@ -71,8 +73,27 @@ class SessionManager(val context: Context)  {
 
         pref.edit().clear().apply()
     }
+/*    fun setStringSession(key: String?, value: String?) {
+        val preferences: SharedPreferences =
+            context.getSharedPreferences(
+                    Global.PREF_NAME,
+                    Context.MODE_PRIVATE
+                )
+        val editor = preferences.edit()
+        editor.putString(key, value)
+        editor.commit()
+    }*/
 
+/*    fun getStringSession(key: String?, defaultVal: String?): String? {
+        val pref: SharedPreferences =
+            context.getSharedPreferences(
+                    Global.PREF_NAME,
+                    Context.MODE_PRIVATE
+                )
+        return pref.getString(key, defaultVal)
+    }*/
     companion object {
+
         private const val KEY_IS_LOGIN = "isLogin"
         private const val KEY_USER_INFO = "user"
         private const val ISREMEMBER = "isRemember"
