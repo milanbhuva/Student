@@ -56,7 +56,7 @@
                     android:src="@drawable/ic_close" />
 
                 <TextView
-                    android:id="@+id/textView15"
+                    android:id="@+id/txttutorname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toStartOf="@id/imgClose"
@@ -72,7 +72,7 @@
                     android:id="@+id/llTop"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_below="@id/textView15"
+                    android:layout_below="@id/txttutorname"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
                     android:orientation="horizontal"

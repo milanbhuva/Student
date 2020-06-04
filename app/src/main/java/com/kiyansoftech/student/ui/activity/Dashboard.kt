@@ -1,10 +1,12 @@
 package com.kiyansoftech.student.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -12,19 +14,30 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import com.contestee.extention.getValue
+import com.contestee.extention.hide
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
+import com.kiyansoftech.student.Global.BaseActivity
 import com.kiyansoftech.student.R
+import com.kiyansoftech.student.model.GetMyClassrooms.GetMyClassroom
+import com.kiyansoftech.student.model.GetMyTutors.GetMyTutor
+import com.kiyansoftech.student.model.Login.StudentLogin
 import com.kiyansoftech.student.ui.fragment.BottomFragments.classroom.ClassRoomFragment
 import com.kiyansoftech.student.ui.fragment.BottomFragments.home.HomeFragment
 import com.kiyansoftech.student.ui.fragment.BottomFragments.library.LibraryFragment
 import com.kiyansoftech.student.ui.fragment.BottomFragments.more.MoreFragment
 import com.kiyansoftech.student.ui.fragment.BottomFragments.notifications.NotificationsFragment
 import com.kiyansoftech.student.ui.fragment.SideFragments.*
+import com.oeye.network.Networking
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_main.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
-class Dashboard : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class Dashboard : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
     private var imgMenu: ImageView? = null
     private var navItemIndex: Int = 0
     private var bottomFragment: Fragment? = null
@@ -33,6 +46,9 @@ class Dashboard : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
 
     // flag to load home fragment when user presses back key
     private val shouldLoadHomeFragOnBackPress = true
+    override fun getLayout(): Int {
+        return R.layout.activity_main
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,18 +89,40 @@ class Dashboard : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
             when (item.itemId) {
                 R.id.navigation_home -> {
                     bottomFragment = HomeFragment.newInstance()
+                    if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+                        drawer_layout.closeDrawer(GravityCompat.START)
+                    }
+
                 }
                 R.id.navigation_class_room -> {
                     bottomFragment = ClassRoomFragment.newInstance()
+                    if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+                    } else {
+                        drawer_layout.openDrawer(GravityCompat.START)
+                    }
+                   // getclassroom()
+
                 }
                 R.id.navigation_library -> {
                     bottomFragment = LibraryFragment.newInstance()
+                    if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+                        drawer_layout.closeDrawer(GravityCompat.START)
+                    }
+
                 }
                 R.id.navigation_notifications -> {
                     bottomFragment = NotificationsFragment.newInstance()
+                    if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+                        drawer_layout.closeDrawer(GravityCompat.START)
+                    }
+
                 }
                 R.id.navigation_more -> {
                     bottomFragment = MoreFragment.newInstance()
+                    if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+                        drawer_layout.closeDrawer(GravityCompat.START)
+                    }
+
                 }
 
             }
@@ -118,6 +156,58 @@ to get data in fragmnent
         }
     }
 
+    private fun getclassroom() {
+
+        Networking.with().getServices().getMyClassroom(session.user?.userId.toString())
+            .enqueue(object : Callback<GetMyClassroom> {
+                override fun onFailure(call: Call<GetMyClassroom>, t: Throwable) {
+                    Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
+                }
+
+                override fun onResponse(
+                    call: Call<GetMyClassroom>,
+                    response: Response<GetMyClassroom>
+                ) {
+                    if (response.body()?.status ==0){
+
+                        Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
+                    }else{
+                        Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
+/*
+                        goToActivityAndClearTask<Dashboard>()
+*/
+                    }
+                }
+            })
+
+    }
+
+    private fun getmytutor() {
+
+        Networking.with().getServices().getMyTutors(session.user?.userId.toString())
+            .enqueue(object : Callback<GetMyTutor> {
+                override fun onFailure(call: Call<GetMyTutor>, t: Throwable) {
+                    Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
+                }
+
+                override fun onResponse(
+                    call: Call<GetMyTutor>,
+                    response: Response<GetMyTutor>
+                ) {
+                    if (response.body()?.status ==0){
+
+                        Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
+                    }else{
+                        val name = response.body()?.data?.get(0)?.name
+                        Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
+/*
+                        goToActivityAndClearTask<Dashboard>()
+*/
+                    }
+                }
+            })
+
+    }
 
     override fun onBackPressed() {
         val drawer =

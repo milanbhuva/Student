@@ -113,7 +113,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <TextView
-            android:id="@+id/textView15"
+            android:id="@+id/txttutorname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -138,7 +138,7 @@
             android:background="@color/dark_black" />
 
         <TextView
-            android:id="@+id/textView16"
+            android:id="@+id/txttutorphone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -146,7 +146,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/textView17"
+            android:id="@+id/txttutoremail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

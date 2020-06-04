@@ -33,7 +33,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView15"
+            android:id="@+id/txttutorname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/textView12"
@@ -50,7 +50,7 @@
             android:id="@+id/llFirstRow"
             android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:layout_below="@id/textView15"
+            android:layout_below="@id/txttutorname"
             android:layout_marginTop="20dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal"

@@ -109,6 +109,10 @@ class LoginActivity : BaseActivity() {
                             progreslogin.hide();
                     }else{
                         val userid=response.body()?.data?.userId;
+//                        session.isLoggedIn=true
+                        session.user = response.body()?.data
+
+
                         val intent = Intent(this@LoginActivity,Dashboard::class.java)
                         intent.putExtra("userid",userid)
                         startActivity(intent)

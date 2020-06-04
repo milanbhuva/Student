@@ -26,7 +26,7 @@
             android:src="@drawable/ic_close" />
 
         <TextView
-            android:id="@+id/textView15"
+            android:id="@+id/txttutorname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/imgClose"
@@ -42,7 +42,7 @@
             android:id="@+id/llFirst"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_below="@id/textView15"
+            android:layout_below="@id/txttutorname"
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:orientation="horizontal"

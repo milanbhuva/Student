@@ -4,6 +4,7 @@ import android.app.NotificationManager
 import android.content.Context
 import com.google.gson.Gson
 import com.kiyansoftech.student.R
+import com.kiyansoftech.student.model.Login.LoginData
 
 
 class SessionManager(val context: Context)  {
@@ -19,12 +20,12 @@ class SessionManager(val context: Context)  {
         get() = pref.contains(ISREMEMBER) && pref.getBoolean(ISREMEMBER, false)
         set(isPinEnable) = storeDataByKey(ISREMEMBER, isPinEnable)
 
-/*
-    var user: User?
+
+    var user: LoginData?
         get() {
             val gson = Gson()
             val json = getDataByKey(KEY_USER_INFO, "")
-            return gson.fromJson(json, User::class.java)
+            return gson.fromJson(json, LoginData::class.java)
         }
         set(user) {
             val gson = Gson()
@@ -32,7 +33,7 @@ class SessionManager(val context: Context)  {
             pref.edit().putString(KEY_USER_INFO, json).apply()
             isLoggedIn = true
         }
-*/
+
 
     @JvmOverloads
     fun getDataByKey(Key: String, DefaultValue: String = ""): String {
