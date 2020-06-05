@@ -14,11 +14,10 @@ import com.kiyansoftech.student.model.MyClassmates.MyClassmate
 import com.kiyansoftech.student.model.MyCourses.MyCourse
 import com.kiyansoftech.student.model.Registration.CustomerRegister
 import com.kiyansoftech.student.model.TopicVideos.TopicVideo
+import okhttp3.MultipartBody
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
+import java.io.File
 
 interface ApiInterface {
 
@@ -110,13 +109,12 @@ interface ApiInterface {
         @Field("classroom_id") classroom_id: String
     ): Call<MyAssignment>
 
-//    @FormUrlEncoded
-//    @POST(ConstHelper.SUBMIT_CLASSROOM_ASSIGNMENT)
-//    fun submitAssignments(
-//        @Field("student_id") student_id: String,
-//        @Field("assignment_id") assignment_id: String,
-//        @Field("assigment") assigment: String
-//    ): Call<MyAssignment>
-
+    @Multipart
+    @POST(ConstHelper.SUBMIT_CLASSROOM_ASSIGNMENT)
+    fun submitAssignments(
+        @Part("student_id") student_id: String,
+        @Part("assignment_id") assignment_id: String,
+        @Part("assigment") assigment: MultipartBody.Part
+    ): Call<MyAssignment>
 
 }
