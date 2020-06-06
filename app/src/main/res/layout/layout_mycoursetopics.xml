@@ -52,7 +52,7 @@
                     android:layout_weight="0.95">
 
                     <ImageView
-                        android:id="@+id/imgVideo"
+                        android:id="@+id/imgVideo2"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_40sdp"
                         android:layout_marginLeft="8dp"
@@ -65,7 +65,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/imgVideo"
+                        android:layout_below="@+id/imgVideo2"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:text="Videos"
