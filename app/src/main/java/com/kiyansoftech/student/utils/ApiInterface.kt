@@ -15,9 +15,9 @@ import com.kiyansoftech.student.model.MyCourses.MyCourse
 import com.kiyansoftech.student.model.Registration.CustomerRegister
 import com.kiyansoftech.student.model.TopicVideos.TopicVideo
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
-import java.io.File
 
 interface ApiInterface {
 
@@ -52,8 +52,7 @@ interface ApiInterface {
     ): Call<ChangePassword>
 
     @GET(ConstHelper.COURSELIST)
-    fun getCourseList(
-    ): Call<CourseList>
+    fun getCourseList(): Call<CourseList>
 
     @FormUrlEncoded
     @POST(ConstHelper.MYCOURSES)
@@ -112,9 +111,10 @@ interface ApiInterface {
     @Multipart
     @POST(ConstHelper.SUBMIT_CLASSROOM_ASSIGNMENT)
     fun submitAssignments(
-        @Part("student_id") student_id: String,
-        @Part("assignment_id") assignment_id: String,
-        @Part("assigment") assigment: MultipartBody.Part
+        @Part("student_id") student_id: RequestBody?,
+        @Part("assignment_id") assignment_id: RequestBody?,
+        @Part assigment: MultipartBody.Part
     ): Call<MyAssignment>
+
 
 }

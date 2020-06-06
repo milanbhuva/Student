@@ -1,23 +1,40 @@
 package com.kiyansoftech.student.ui.fragment.SideFragments
 
-import android.content.Context
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
-import android.os.Environment
 import android.provider.MediaStore
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.contestee.extention.hide
+import com.contestee.extention.invisible
+import com.contestee.extention.visible
 import com.kiyansoftech.student.R
+import com.kiyansoftech.student.adapter.MyTutoradapter
+import com.kiyansoftech.student.model.GetMyTutors.Data
+import com.kiyansoftech.student.model.GetMyTutors.GetMyTutor
+import com.kiyansoftech.student.model.MyAssignments.MyAssignment
+import com.kiyansoftech.student.utils.Utility
+import com.oeye.network.Networking
+import kotlinx.android.synthetic.main.fragment_assignment.*
+import kotlinx.android.synthetic.main.fragment_my_tutor.*
+import okhttp3.MediaType
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.io.File
-import java.io.IOException
-import java.text.SimpleDateFormat
-import java.util.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -37,9 +54,14 @@ class AssignmentFragment : Fragment() {
     private val PDF_REQUEST = 212
     private var output: File? = null
     private var imgString = ""
+    var userid: String = ""
+    var progress: ProgressBar? = null
+    var txtfilename: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        userid = this.getArguments()?.getString("userid").toString()
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -53,20 +75,65 @@ class AssignmentFragment : Fragment() {
         // Inflate the layout for this fragment
         var view = inflater.inflate(R.layout.fragment_assignment, container, false)
         val lblFileChoose = view.findViewById<TextView>(R.id.lblFileChoose)
+        val submit = view.findViewById<TextView>(R.id.lblUpload)
+         progress=view.findViewById<ProgressBar>(R.id.progressupload);
+        txtfilename=view.findViewById(R.id.filename)
+
         lblFileChoose.setOnClickListener {
 
+            Utility.checkPermission(context)
             val intent = Intent()
             intent.action = Intent.ACTION_GET_CONTENT
             intent.type = "application/pdf"
             startActivityForResult(intent, PDF_REQUEST)
+        }
+        submit.setOnClickListener {
+            submitassignment()
 
         }
         return view
     }
 
-    private fun submitassignment() {
-        val pdfPerfil: MultipartBody.Part? = null
 
+    private fun submitassignment() {
+        progress?.visible()
+        var pdfPerfil: MultipartBody.Part? = null
+        if (output != null && output!!.exists()) {
+            val requestFile =
+                RequestBody.create(MediaType.parse("multipart/form-data"), output)
+            // MultipartBody.Part is used to send also the actual file name
+            pdfPerfil = MultipartBody.Part.createFormData("assigment", output!!.name, requestFile)
+
+            val requeststudentid: RequestBody =
+                RequestBody.create(MediaType.parse("multipart/form-data"), userid)
+            val requestassignmentid: RequestBody =
+                RequestBody.create(MediaType.parse("multipart/form-data"), userid)
+
+            Networking.with().getServices()
+                .submitAssignments(requeststudentid, requestassignmentid, pdfPerfil)
+                .enqueue(object : Callback<MyAssignment> {
+                    override fun onFailure(call: Call<MyAssignment>, t: Throwable) {
+                        Toast.makeText(context, t.message, Toast.LENGTH_LONG).show()
+                    }
+
+                    override fun onResponse(
+                        call: Call<MyAssignment>,
+                        response: Response<MyAssignment>
+                    ) {
+                        if (response.body()?.status == 0) {
+                            progress?.invisible()
+                            Toast.makeText(context, response.body()?.message, Toast.LENGTH_LONG)
+                                .show()
+                        } else {
+                            progress?.invisible()
+
+                            Toast.makeText(context, "Assignment uploaded", Toast.LENGTH_LONG)
+                                .show()
+                        }
+                    }
+                })
+
+        }
 
     }
 
@@ -77,12 +144,12 @@ class AssignmentFragment : Fragment() {
             var selectedImageUri: Uri? = data?.data
 
             if (selectedImageUri != null) {
-              /*  imgString = selectedImageUri.path.toString()
-                output = File(imgString)*/
 
+//getpath from uri in result
                 var result: String? = null
                 val proj = arrayOf(MediaStore.Images.Media.DATA)
-                val cursor = requireContext().contentResolver.query(selectedImageUri, proj, null, null, null)
+                val cursor =
+                    requireContext().contentResolver.query(selectedImageUri, proj, null, null, null)
                 if (cursor != null) {
                     if (cursor.moveToFirst()) {
                         val column_index = cursor.getColumnIndexOrThrow(proj[0])
@@ -92,48 +159,17 @@ class AssignmentFragment : Fragment() {
                 }
                 if (result == null) {
                     result = "Not found"
-                }else{
-                    imgString=result;
-                    output=File(imgString)
+                } else {
+                    imgString = result;
+                    output = File(imgString)
+                    txtfilename?.setText(output!!.name)
+
                 }
 
-                Toast.makeText(activity,""+imgString,Toast.LENGTH_LONG).show()
+                Toast.makeText(activity, "" + imgString, Toast.LENGTH_LONG).show()
             }
         }
     }
-
-    @Throws(IOException::class)
-    fun createpdfFile(context: Context): File? {
-        // Create an image file name
-        val timeStamp =
-            SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
-        val imageFileName = "PDF_" + timeStamp + "_"
-        val storageDir =
-            context.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-        // Save a file: path for use with ACTION_VIEW intents
-        //  mCurrentPhotoPath = image.getAbsolutePath();
-        return File.createTempFile(
-            imageFileName,  /* prefix */
-            ".pdf",  /* suffix */
-            storageDir /* directory */
-        )
-    }
-
-    private fun getPathDeprecated(ctx: Context, uri: Uri?): String? {
-        if (uri == null) {
-            return null
-        }
-        val projection = arrayOf(MediaStore.Images.Media.DATA)
-        val cursor = ctx.contentResolver.query(uri, projection, null, null, null)
-        if (cursor != null) {
-            val column_index = cursor
-                .getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
-            cursor.moveToFirst()
-            return cursor.getString(column_index)
-        }
-        return uri.path
-    }
-
 
 
     companion object {

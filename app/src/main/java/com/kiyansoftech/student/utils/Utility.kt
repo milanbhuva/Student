@@ -28,14 +28,17 @@ object Utility {
                         Manifest.permission.READ_EXTERNAL_STORAGE
                     )
                 ) {
-                    val alertBuilder =
+                    ActivityCompat.requestPermissions(
+                        (context as Activity?)!!,
+                        arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
+                        MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE
+                    )
+                 /*   val alertBuilder =
                         AlertDialog.Builder(context)
                     alertBuilder.setCancelable(true)
                     alertBuilder.setTitle("Permission necessary")
                     alertBuilder.setMessage("External storage permission is necessary")
-                    alertBuilder.setPositiveButton(
-                        R.string.yes
-                    ) { dialog, which ->
+                    alertBuilder.setPositiveButton(R.string.yes) { dialog, which ->
                         ActivityCompat.requestPermissions(
                             (context as Activity?)!!,
                             arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
@@ -43,7 +46,7 @@ object Utility {
                         )
                     }
                     val alert = alertBuilder.create()
-                    alert.show()
+                    alert.show()*/
                 } else {
                     ActivityCompat.requestPermissions(
                         (context as Activity?)!!,

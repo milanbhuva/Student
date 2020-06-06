@@ -43,7 +43,8 @@ class Dashboard : BaseActivity(), NavigationView.OnNavigationItemSelectedListene
     private var bottomFragment: Fragment? = null
     private var sideFragment: Fragment? = null
     private var toolbar: Toolbar? = null
-    var userid: String  = ""
+    var userid: String = ""
+    var classroomid: String = ""
 
 
     // flag to load home fragment when user presses back key
@@ -60,7 +61,7 @@ class Dashboard : BaseActivity(), NavigationView.OnNavigationItemSelectedListene
         )
         setContentView(R.layout.activity_main)
 
-        userid=intent.getStringExtra("userid")
+        userid = intent.getStringExtra("userid")
         imgMenu = findViewById<View>(R.id.imgViewMenu) as ImageView
         imgMenu!!.setOnClickListener(View.OnClickListener {
             if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
@@ -143,7 +144,7 @@ class Dashboard : BaseActivity(), NavigationView.OnNavigationItemSelectedListene
 */
 
             val bundle = Bundle()
-            val myMessage = "Stackoverflow is cool!"
+            val myMessage = "cool!"
             bundle.putString("message", myMessage)
             val fragInfo = bottomFragment
             fragInfo?.setArguments(bundle)
@@ -171,11 +172,19 @@ to get data in fragmnent
                     call: Call<GetMyClassroom>,
                     response: Response<GetMyClassroom>
                 ) {
-                    if (response.body()?.status ==0){
+                    if (response.body()?.status == 0) {
 
-                        Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
-                    }else{
-                        Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
+                        Toast.makeText(
+                            applicationContext,
+                            response.body()?.message,
+                            Toast.LENGTH_LONG
+                        ).show()
+                    } else {
+                        Toast.makeText(
+                            applicationContext,
+                            response.body()?.message,
+                            Toast.LENGTH_LONG
+                        ).show()
 /*
                         goToActivityAndClearTask<Dashboard>()
 */

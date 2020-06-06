@@ -66,7 +66,7 @@
     <string name="hint_courseSelection">Show Course Selected</string>
     <string name="hint_email">Enter Email</string>
     <string name="hint_phone">Phone Number</string>
-    <string name="hint_trainingMode">Select Training Mode</string>
+    <string name="hint_trainingMode">Select Training\nMode</string>
     <string name="str_faceToFace">Face-To-Face</string>
     <string name="str_eLearning">E-Learning</string>
     <string name="hint_trainingDate">Training Date</string>
@@ -90,6 +90,7 @@
     <string name="enter_name">Please Enter Name</string>
     <string name="enter_email">Please Enter Email</string>
     <string name="enter_password">Please Enter Password</string>
+    <string name="enter_refferal">Please Enter Referral code</string>
     <string name="enter_passwordold">Please Enter Old Password</string>
     <string name="enter_passwordnew">Please Enter New Password</string>
     <string name="confirm_password">Password does not match.</string>

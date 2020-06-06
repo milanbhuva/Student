@@ -39,15 +39,14 @@ class TutorFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    var userid: String  = ""
 
+    var userid: String = ""
     private var tutorslist: ArrayList<Data> = ArrayList()
-
     private lateinit var adapter: MyTutoradapter
     private lateinit var linearLayoutManager: LinearLayoutManager
-    var preferences: SharedPreferences? = null
-    var editor: SharedPreferences.Editor? = null
     var progressbar: ProgressBar? = null
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         userid = this.getArguments()?.getString("userid").toString()
@@ -62,12 +61,14 @@ class TutorFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_my_tutor, container, false)
+
         linearLayoutManager = LinearLayoutManager(context)
         var rvmytutors = view.findViewById<RecyclerView>(R.id.rvmytutorlist)
         progressbar = view.findViewById<ProgressBar>(R.id.progresstutor)
         rvmytutors.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         getmytutor()
+
         return view
 
     }
