@@ -162,8 +162,10 @@ class AssignmentFragment : Fragment() {
                 } else {
                     imgString = result;
                     output = File(imgString)
-                    txtfilename?.setText(output!!.name)
+                    val upToNCharacters: String =
+                        output!!.name.substring(0, Math.min(output!!.name.length, 16))
 
+                    txtfilename?.setText(upToNCharacters)
                 }
 
                 Toast.makeText(activity, "" + imgString, Toast.LENGTH_LONG).show()

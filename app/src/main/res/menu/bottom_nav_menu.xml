@@ -5,24 +5,25 @@
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home"
         android:title="@string/title_home" />
+    <item
+        android:id="@+id/navigation_message"
+        android:icon="@drawable/ic_message2"
+        android:title="@string/nav_message" />
+
 
     <item
         android:id="@+id/navigation_class_room"
         android:icon="@drawable/ic_classroom"
         android:title="@string/my_classroom" />
 
+
     <item
         android:id="@+id/navigation_library"
         android:icon="@drawable/ic_library"
-        android:title="@string/library" />
-
+        android:title="@string/examportal" />
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notification"
-        android:title="@string/notifications" />
-    <item
-        android:id="@+id/navigation_more"
-        android:icon="@drawable/ic_open_menu"
+        android:id="@+id/navigation_account"
+        android:icon="@drawable/ic_menu"
         android:title="@string/more" />
 
 </menu>

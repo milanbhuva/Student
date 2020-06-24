@@ -31,7 +31,7 @@ class SignupScreen : BaseActivity() {
         super.onCreate(savedInstanceState)
 
 
-        var name = edtName.text;
+        var name = edtfName.text;
         var email = edtEmail.text;
         var password = edtPassword.text;
 
@@ -58,7 +58,7 @@ class SignupScreen : BaseActivity() {
 
 
     private fun validation() {
-        if (edtName.isEmpty()) {
+        if (edtfName.isEmpty()) {
             root.showSnackBar(getString(R.string.enter_name))
         } else if (edtEmail.isEmpty()) {
             root.showSnackBar(getString(R.string.enter_email))
@@ -70,7 +70,7 @@ class SignupScreen : BaseActivity() {
             root.showSnackBar(getString(R.string.confirm_password))
         } else {
 
-            Networking.with().getServices().makeStudentRegistration(edtName.getValue(),edtEmail.getValue(),edtPassword.getValue())
+            Networking.with().getServices().makeStudentRegistration(edtfName.getValue(),edtEmail.getValue(),edtPassword.getValue())
                 .enqueue(object : Callback<CustomerRegister>{
                     override fun onFailure(call: Call<CustomerRegister>, t: Throwable) {
                         Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()

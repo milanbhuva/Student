@@ -67,7 +67,7 @@ class TutorFragment : Fragment() {
         progressbar = view.findViewById<ProgressBar>(R.id.progresstutor)
         rvmytutors.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        getmytutor()
+     //   getmytutor()
 
         return view
 

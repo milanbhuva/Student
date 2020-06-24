@@ -39,8 +39,8 @@ class ClassmatesFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    var userid: String = ""
-    var progressbar: ProgressBar? = null
+  //  var userid: String = ""
+  //  var progressbar: ProgressBar? = null
 
     private var classmatelist: ArrayList<Data> = ArrayList()
     private lateinit var adapter: MyClassmateadapter
@@ -48,7 +48,7 @@ class ClassmatesFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        userid = this.getArguments()?.getString("userid").toString()
+       // userid = this.getArguments()?.getString("userid").toString()
 
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
@@ -62,14 +62,17 @@ class ClassmatesFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view= inflater.inflate(R.layout.fragment_classmates, container, false)
-        var rvmyclassmates = view.findViewById<RecyclerView>(R.id.rvmyclassmatelist)
-        progressbar = view.findViewById<ProgressBar>(R.id.progressclassmate)
+       //var rvmyclassmates = view.findViewById<RecyclerView>(R.id.rvmyclassmatelist)
+        //progressbar = view.findViewById<ProgressBar>(R.id.progressclassmate)
 
+/*
         rvmyclassmates.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        getmyclassmates()
+*/
+      //  getmyclassmates()
         return view
     }
+/*
     private fun getmyclassmates() {
         progressbar?.visible()
         Networking.with().getServices().getMyClassmates(userid,userid)
@@ -92,14 +95,17 @@ class ClassmatesFragment : Fragment() {
                         rvmyclassmatelist.adapter = adapter
                         progressbar?.hide()
                         Toast.makeText(context, response.body()?.message, Toast.LENGTH_LONG).show()
+*/
 /*
                         goToActivityAndClearTask<Dashboard>()
-*/
+*//*
+
                     }
                 }
             })
 
     }
+*/
 
     companion object {
 

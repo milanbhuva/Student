@@ -42,7 +42,7 @@ class ChangePasswordScreen : BaseActivity() {
             root.showSnackBar(getString(R.string.enter_passwordnew))
         }else{
 
-            Networking.with().getServices().changePassword(edtName.getValue(),edtoldpass.getValue(),edtnewpass.getValue())
+            Networking.with().getServices().changePassword(edtfName.getValue(),edtoldpass.getValue(),edtnewpass.getValue())
                 .enqueue(object : Callback<ChangePassword> {
                     override fun onFailure(call: Call<ChangePassword>, t: Throwable) {
                         Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()

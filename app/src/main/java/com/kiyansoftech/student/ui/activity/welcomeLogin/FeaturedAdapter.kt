@@ -14,7 +14,7 @@ class FeaturedAdapter(var context: Context,var list: ArrayList<String>):Recycler
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.featured_item,parent,false))
+        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_course,parent,false))
     }
 
     override fun getItemCount(): Int {

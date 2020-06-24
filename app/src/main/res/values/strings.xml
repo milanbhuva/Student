@@ -4,7 +4,9 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="my_classroom">My ClassRoom</string>
+    <string name="account">Account</string>
     <string name="library">Library</string>
+    <string name="examportal">Exam Portal</string>
     <string name="more">More</string>
     <string name="notifications">Notifications</string>
 
@@ -30,6 +32,16 @@
         <item>Settings</item>
     </string-array>
 
+
+    <string name="gender">Select Gender</string>
+
+    <string-array name="gender_list">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    />
+
+
     <string name="activity_title_about_us">About Us</string>
     <string name="activity_title_privacy_policy">Privacy Policy</string>
     <string name="action_clear_all">Clear All</string>
@@ -39,15 +51,31 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="nav_myCourses">My Courses</string>
-    <string name="nav_tutor">My Tutor</string>
-    <string name="nav_library">My Library</string>
-    <string name="nav_classlive">Class livestrem</string>
-    <string name="nav_notes">My Notes</string>
-    <string name="nav_assignments">My Assignment</string>
-    <string name="nav_classmates">My classmates</string>
+    <string name="nav_myclassroom">My Classroom</string>
     <string name="nav_message">Message</string>
+    <string name="nav_library">My Library</string>
+    <string name="nav_classmates">My classmates</string>
+    <string name="nav_tutor">My Tutor</string>
+    <string name="nav_traininvid">Training videos</string>
+    <string name="nav_newCourse">New Course</string>
+    <string name="nav_courseguide">Course Guide</string>
     <string name="nav_mockexam">Mock Exam</string>
+    <string name="nav_examportal">Exam Portal</string>
+    <string name="nav_checkresult">Check Result</string>
+    <string name="nav_assignments">My Assignment</string>
+    <string name="nav_mymentor">My Mentor</string>
+    <string name="nav_notes">My Notes</string>
+    <string name="nav_mycalender">My Calender</string>
+    <string name="nav_shareapp">Share App</string>
+    <string name="nav_playgames">Play Games</string>
+    <string name="nav_payment">Payments</string>
+    <string name="nav_mycertificate">My Certificates</string>
+    <string name="nav_studyres">Study Resources</string>
+    <string name="nav_coursemanual">Course Manuals</string>
+
+
+    <string name="nav_myCourses">My Courses</string>
+    <string name="nav_classlive">Class livestrem</string>
     <string name="str_installapp">Install\n Notezilla Notepad app</string>
     <string name="str_makePayment">Make Payment</string>
     <string name="str_paymentHistory">Payment History</string>
@@ -85,7 +113,6 @@
     <string name="nav_startCourse">Start a course</string>
     <string name="nav_payments">My Payments</string>
     <string name="nav_locationfinder">Location FInder</string>
-    <string name="nav_mycalender">My Calender</string>
 
     <string name="enter_name">Please Enter Name</string>
     <string name="enter_email">Please Enter Email</string>

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.contestee.extention.hide
@@ -45,11 +46,12 @@ class MyCoursesFragment : Fragment() {
     private lateinit var adapter: MyCoursesAdapter
     private lateinit var linearLayoutManager: LinearLayoutManager
     var progressbar: ProgressBar? = null
+    private lateinit var gridLayoutManager: GridLayoutManager
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        userid = this.getArguments()?.getString("userid").toString()
+     //   userid = this.getArguments()?.getString("userid").toString()
 
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
@@ -65,15 +67,18 @@ class MyCoursesFragment : Fragment() {
         val view =inflater.inflate(R.layout.fragment_my_courses, container, false)
         var rvmycourses=view.findViewById<RecyclerView>(R.id.rvmycourses)
         progressbar = view.findViewById<ProgressBar>(R.id.progressbar)
-        linearLayoutManager = LinearLayoutManager(context)
+        gridLayoutManager = GridLayoutManager(activity, 2, GridLayoutManager.VERTICAL, false)
+        rvmycourses.layoutManager =gridLayoutManager
+
+       /* linearLayoutManager = LinearLayoutManager(context)
         rvmycourses.layoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)*/
         getmycourses()
         return view
     }
     private fun getmycourses() {
         progressbar?.visible()
-        Networking.with().getServices().getMyCourses(userid)
+        Networking.with().getServices().getMyCourses("1")
             .enqueue(object : Callback<MyCourse> {
                 override fun onFailure(call: Call<MyCourse>, t: Throwable) {
                     Toast.makeText(context, t.message, Toast.LENGTH_LONG).show()

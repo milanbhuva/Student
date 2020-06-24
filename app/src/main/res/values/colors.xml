@@ -4,6 +4,10 @@
     <color name="colorPrimaryDark">#52668c</color>
     <color name="water">#d2deec</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="maincolor">#1F2936</color>
+    <color name="mainorange">#FA4E00</color>
+    <color name="maintxt">#647B98</color>
+    <color name="mainbg">#F2F5F8</color>
 
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
@@ -15,4 +19,6 @@
     <color name="mulledwine">#4C4B4D</color>
     <color name="darkGreen">#48897B</color>
     <color name="pigmentGreen">#00A85A</color>
+    <color name="bluetxt">#0E4F83</color>
+    <color name="red">#F4070F</color>
 </resources>

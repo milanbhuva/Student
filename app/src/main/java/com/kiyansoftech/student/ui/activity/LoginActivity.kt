@@ -8,6 +8,7 @@ import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -18,6 +19,7 @@ import com.google.firebase.iid.FirebaseInstanceId
 import com.kiyansoftech.student.Global.BaseActivity
 import com.kiyansoftech.student.R
 import com.kiyansoftech.student.model.Login.StudentLogin
+import com.kiyansoftech.student.ui.activity.welcomeLogin.WelcomeLoginActivity
 import com.kiyansoftech.student.utils.MyApplication.Companion.context
 import com.kiyansoftech.student.utils.Utility
 import com.oeye.network.Networking
@@ -42,11 +44,14 @@ class LoginActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         global = Global.getInstance(this)
 
+
         btnLogin.setOnClickListener {
 
+/*
             val mDialogView = LayoutInflater.from(this).inflate(R.layout.dialog_referral, null)
             //AlertDialogBuilder
             val mBuilder = AlertDialog.Builder(this)
@@ -69,40 +74,17 @@ class LoginActivity : BaseActivity() {
             }
 
             // Logincall()
-            // startActivity(Intent(this, WelcomeLoginActivity::class.java))
+
+*/ startActivity(Intent(this, WelcomeScreen::class.java))
         }
 
         txtForgot.setOnClickListener {
             startActivity(Intent(this, ForgotPasswordScreen::class.java))
 
         }
+
     }
 
-/*
-    private fun setupPermissions() {
-        val permission = ContextCompat.checkSelfPermission(
-            this,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
-        )
-        */
-/* val permission2 = ContextCompat.checkSelfPermission(this,
-             Manifest.permission.WRITE_EXTERNAL_STORAGE)*//*
-
-        if (permission != PackageManager.PERMISSION_GRANTED) {
-            makeRequest()
-        }
-    }
-*/
-
-/*
-    private fun makeRequest() {
-        ActivityCompat.requestPermissions(
-            this,
-            arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
-            RECORD_REQUEST_CODE
-        )
-    }
-*/
 
     override fun onRequestPermissionsResult(
         requestCode: Int,

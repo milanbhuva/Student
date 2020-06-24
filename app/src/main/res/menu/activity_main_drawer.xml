@@ -3,72 +3,181 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_mycourse"
+            android:id="@+id/nav_myclassroom"
             android:icon="@drawable/circle_background"
-            android:title="@string/nav_myCourses" />
+            android:title="@string/nav_myclassroom" />
+        <item
+            android:id="@+id/nav_message"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_message" />
+        <item
+            android:id="@+id/nav_library"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_library" />
+        <item
+            android:id="@+id/nav_classmates"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_classmates" />
         <item
             android:id="@+id/nav_tutor"
             android:icon="@drawable/circle_background"
             android:title="@string/nav_tutor" />
         <item
-            android:id="@+id/nav_library"
+            android:id="@+id/nav_trainvid"
             android:icon="@drawable/circle_background"
-            android:title="@string/nav_library" />
+            android:title="@string/nav_traininvid" />
 
         <item
-            android:id="@+id/nav_classlive"
+            android:id="@+id/nav_newcourse"
             android:icon="@drawable/circle_background"
-            android:title="@string/nav_classlive" />
-
+            android:title="@string/nav_newCourse" />
         <item
-            android:id="@+id/nav_notes"
+            android:id="@+id/nav_courseguide"
             android:icon="@drawable/circle_background"
-            android:title="@string/nav_notes" />
-
-        <item
-            android:id="@+id/nav_assignments"
-            android:icon="@drawable/circle_background"
-            android:title="@string/nav_assignments" />
-
-        <item
-            android:id="@+id/nav_classmates"
-            android:icon="@drawable/circle_background"
-            android:title="@string/nav_classmates" />
-
-        <item
-            android:id="@+id/nav_message"
-            android:icon="@drawable/circle_background"
-            android:title="@string/nav_message" />
-
+            android:title="@string/nav_courseguide" />
         <item
             android:id="@+id/nav_mockexam"
             android:icon="@drawable/circle_background"
             android:title="@string/nav_mockexam" />
 
         <item
+            android:id="@+id/nav_examportal"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_examportal" />
+
+        <item
+            android:id="@+id/nav_checkresult"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_checkresult" />
+
+        <item
+            android:id="@+id/nav_assignments"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_assignments" />
+        <item
             android:id="@+id/nav_mentors"
             android:icon="@drawable/circle_background"
             android:title="@string/nav_mentors" />
-
         <item
-            android:id="@+id/nav_startCourse"
+            android:id="@+id/nav_notes"
             android:icon="@drawable/circle_background"
-            android:title="@string/nav_startCourse" />
-
-        <item
-            android:id="@+id/nav_payments"
-            android:icon="@drawable/circle_background"
-            android:title="@string/nav_payments" />
-
-        <item
-            android:id="@+id/nav_locationfinder"
-            android:icon="@drawable/circle_background"
-            android:title="@string/nav_locationfinder" />
+            android:title="@string/nav_notes" />
 
         <item
             android:id="@+id/nav_mycalender"
             android:icon="@drawable/circle_background"
             android:title="@string/nav_mycalender" />
+
+        <item
+            android:id="@+id/nav_shareapp"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_shareapp" />
+        <item
+            android:id="@+id/nav_playgames"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_playgames" />
+        <item
+            android:id="@+id/nav_payments"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_payments" />
+        <item
+            android:id="@+id/nav_mycertificate"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_mycertificate" />
+
+
+        <!--        menu for mycalssroom-->
+
+        <item
+            android:id="@+id/nav_mycourse"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_myCourses"
+            android:visible="false" />
+        <item
+            android:id="@+id/nav_tutor2"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_tutor"
+            android:visible="false" />
+
+        <item
+            android:id="@+id/nav_classmates2"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_classmates"
+            android:visible="false" />
+        <item
+            android:id="@+id/nav_library2"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_library"
+            android:visible="false" />
+        <item
+            android:id="@+id/nav_assignments2"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_assignments"
+            android:visible="false" />
+        <item
+            android:id="@+id/nav_notes2"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_notes"
+            android:visible="false" />
+
+        <item
+            android:id="@+id/nav_mockexam2"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_mockexam"
+            android:visible="false"/>
+        <item
+            android:id="@+id/nav_message2"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_message"
+            android:visible="false" />
+
+
+        <!--        menu for library-->
+
+        <item
+            android:id="@+id/nav_courseguide3"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_courseguide"
+            android:visible="false" />
+        <item
+            android:id="@+id/nav_studyres"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_studyres"
+            android:visible="false" />
+        <item
+            android:id="@+id/nav_coursemanual"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_coursemanual"
+            android:visible="false" />
+
+        <item
+            android:id="@+id/nav_trainvid3"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_traininvid"
+            android:visible="false" />
+
+
+        <item
+            android:id="@+id/nav_classlive"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_classlive"
+            android:visible="false" />
+
+
+        <item
+            android:id="@+id/nav_startCourse"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_startCourse"
+            android:visible="false" />
+
+
+        <item
+            android:id="@+id/nav_locationfinder"
+            android:icon="@drawable/circle_background"
+            android:title="@string/nav_locationfinder"
+            android:visible="false" />
+
+
     </group>
 
 </menu>

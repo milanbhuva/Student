@@ -10,9 +10,12 @@ import com.bumptech.glide.Glide
 import com.contestee.extention.inflate
 import com.kiyansoftech.student.R
 import com.kiyansoftech.student.model.MyCourses.Data
+import com.kiyansoftech.student.ui.activity.CoursePlayActivity
 import com.kiyansoftech.student.ui.activity.CourseTopicsActivity
 import com.kiyansoftech.student.utils.MyApplication.Companion.context
+import kotlinx.android.synthetic.main.item_course.view.*
 import kotlinx.android.synthetic.main.layout_courseslist.view.*
+import kotlinx.android.synthetic.main.layout_courseslist.view.txtcoursename
 import kotlinx.android.synthetic.main.layout_mycourseslist.view.*
 
 class MyCoursesAdapter (private val mycourses: ArrayList<Data>) :
@@ -20,7 +23,7 @@ class MyCoursesAdapter (private val mycourses: ArrayList<Data>) :
     var position:Int?=0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyCoursesAdapter.MyCourseHolder {
-        val inflatedView = parent.inflate(R.layout.layout_mycourseslist, false)
+        val inflatedView = parent.inflate(R.layout.item_course, false)
         return MyCourseHolder(inflatedView)
     }
 
@@ -34,10 +37,10 @@ class MyCoursesAdapter (private val mycourses: ArrayList<Data>) :
         val data=mycourses.get(position)
 
         holder.itemView.setOnClickListener {
-            val intent = Intent(context!!,CourseTopicsActivity::class.java)
-            intent.putExtra("coursename",data.courseName)
+            val intent = Intent(context!!,CoursePlayActivity::class.java)
+           /* intent.putExtra("coursename",data.courseName)
             intent.putExtra("coursedesc",data.courseDescription)
-            intent.putExtra("courseid",data.courseId)
+            intent.putExtra("courseid",data.courseId)*/
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             context!!.startActivity(intent)
         }
@@ -56,9 +59,9 @@ class MyCoursesAdapter (private val mycourses: ArrayList<Data>) :
 
         fun bindcourses(data: Data) {
             this.data = data
-            view.txtmycname.text = data.courseName
-            view.txtmycdes.text = data.courseDescription
-            view.txtcduration.text = data.courseDuration
+          /*  view.txtcoursename.text = data.courseName
+            view.txtenrolls.text = data.courseDescription
+            view.txtduration2.text = data.courseDuration*/
         }
 
         //4
